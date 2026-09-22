@@ -1,0 +1,229 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+
+  min-height: 75px;
+
+  padding: 0 6%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e8eef5;
+
+  position: relative;
+
+  z-index: 10;
+
+  box-shadow:
+    0 5px 20px rgba(25, 118, 210, 0.06);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #172b4d;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.navbar-logo > span span {
+  color: #1976d2;
+}
+
+
+.logo-icon {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #fff3df;
+
+  color: #ff9800;
+
+  font-size: 23px;
+
+  transition: 0.3s;
+}
+
+
+.navbar-logo:hover .logo-icon {
+  transform:
+    rotate(-8deg)
+    scale(1.1);
+
+  background: #ff9800;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.nav-links a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border-radius: 12px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+
+.nav-links a svg {
+  color: #1976d2;
+
+  transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+  background: #eaf4ff;
+
+  color: #1976d2;
+
+  transform: translateY(-2px);
+}
+
+
+.nav-links a:hover svg {
+  transform: scale(1.15);
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #1976d2;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.login-button:hover {
+  background: #ff9800;
+
+  transform:
+    translateY(-2px)
+    scale(1.03);
+
+  box-shadow:
+    0 8px 20px rgba(255, 152, 0, 0.25);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+  .navbar {
+    padding: 12px 20px;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+
+
+  .nav-links {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    padding-bottom: 8px;
+  }
+
+
+  .nav-links a {
+    padding: 8px 10px;
+  }
+
+
+  .nav-links a span {
+    display: none;
+  }
+
+
+  .login-button span {
+    display: none;
+  }
+
+}

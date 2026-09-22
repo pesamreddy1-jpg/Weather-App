@@ -1,0 +1,365 @@
+/* =========================
+   FORECAST SECTION
+========================= */
+
+.forecast-section {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 40px 20px 90px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.forecast-heading {
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+
+.forecast-heading span {
+  color: blue;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.forecast-heading h2 {
+  margin-top: 10px;
+
+  color: #2d62bf;
+
+  font-size: 38px;
+}
+
+
+.forecast-heading p {
+  margin-top: 10px;
+
+  color: #125ec8;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   FORECAST GRID
+========================= */
+
+.forecast-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =========================
+   FORECAST CARD
+========================= */
+
+.forecast-card {
+  position: relative;
+
+  padding: 25px 18px;
+
+  text-align: center;
+
+  background: #d8b9b9;
+
+  border: 1px solid #edf2f7;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 12px 35px rgba(25, 118, 210, 0.07);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  overflow: hidden;
+
+  animation: forecastAppear 0.7s ease both;
+}
+
+
+/* Stagger animation */
+
+.forecast-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.forecast-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.forecast-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.forecast-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.forecast-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+
+.forecast-card:hover {
+  transform:
+    translateY(-12px)
+    scale(1.02);
+
+  box-shadow:
+    0 22px 45px rgba(25, 118, 210, 0.14);
+}
+
+
+/* Top decorative line */
+
+.forecast-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: #1976d2;
+}
+
+
+.forecast-card.sun::before {
+  background: #ff9800;
+}
+
+
+.forecast-card.rain::before {
+  background: #1976d2;
+}
+
+
+.forecast-card.storm::before {
+  background: #ff9800;
+}
+
+
+/* =========================
+   DAY
+========================= */
+
+.forecast-day h3 {
+  color: #172b4d;
+
+  font-size: 16px;
+}
+
+
+.forecast-day span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   WEATHER ICON
+========================= */
+
+.forecast-icon {
+  width: 75px;
+
+  height: 75px;
+
+  margin: 25px auto 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background: #eaf4ff;
+
+  color: #1976d2;
+
+  font-size: 35px;
+
+  transition: 0.35s;
+
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+
+.forecast-card.sun .forecast-icon {
+  background: #fff3df;
+
+  color: #ff9800;
+}
+
+
+.forecast-card.rain .forecast-icon {
+  background: #eaf4ff;
+
+  color: #1976d2;
+}
+
+
+.forecast-card.storm .forecast-icon {
+  background: #fff3df;
+
+  color: #ff9800;
+}
+
+
+.forecast-card:hover .forecast-icon {
+  transform:
+    rotate(8deg)
+    scale(1.12);
+}
+
+
+/* =========================
+   CONDITION
+========================= */
+
+.forecast-condition {
+  min-height: 40px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   TEMPERATURE
+========================= */
+
+.forecast-temperature {
+  margin-top: 15px;
+}
+
+
+.forecast-temperature strong {
+  color: #1976d2;
+
+  font-size: 27px;
+}
+
+
+.forecast-temperature span {
+  color: #94a3b8;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes forecastAppear {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes iconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .forecast-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .forecast-section {
+    padding: 30px 15px 70px;
+  }
+
+
+  .forecast-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .forecast-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .forecast-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
